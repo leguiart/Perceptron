@@ -13,7 +13,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-@author: leguiart
+    Aprendizaje 
+    main.cpp 
+    @author leguiart
 */
 
 #include <iostream>
@@ -60,7 +62,7 @@ Por comodidad y eficiencia se decidió cambiar al método de crear las
 matrices con MATLAB/Octave ya que son completamente compatibles con 
 armadillo.
 */
-// Extract the data as an Armadillo matrix Mat of type T, if there is no data the matrix will be empty
+// Extraer los datos como una matriz de Armadillo de tipo T, si no hay datos, la matriz estará vacía
 template<typename T>
 arma::Mat<T> load_mat(std::ifstream &file, const std::string &keyword) {
   std::string line;
@@ -87,9 +89,11 @@ arma::Mat<T> load_mat(std::ifstream &file, const std::string &keyword) {
 }
  
 int main() {
-  Perceptron perceptron[4];
- 	std::ifstream file("matlab_data_v2.txt");
+  Perceptron perceptron[4]; //creamos cuatro perceptrones para los cuatro ejercicios
+ 	std::ifstream file("matlab_data_v2.txt"); //cargamos el stream del archivo generado por matlab
 
+  //Cargamos cada una de las matrices correspondientes a cada ejemplo pasandole a la funcion load_mat el stream y la keyword que debe buscar
+  //para cada matriz
   arma::mat A1 = load_mat<double>(file, "A1");
   arma::mat B1 = load_mat<double>(file, "B1");
   arma::mat W1 = load_mat<double>(file, "W1");
@@ -110,8 +114,11 @@ int main() {
   arma::mat W4 = load_mat<double>(file, "W4");
   arma::mat b4 = load_mat<double>(file, "b4");
 
+  //Inicializamos los perceptrones con sus matrices correspondientes
   perceptron[0] = Perceptron(A1, B1, W1, b1);
+  //Los entrenamos
   perceptron[0].Train();
+  //Imprimimos el peso y bias finales
   std::cout << "W:\n" << perceptron[0].getWeight() << "\n";
   std::cout << "b:\n" << perceptron[0].getBias() << "\n";
 

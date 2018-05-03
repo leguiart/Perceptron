@@ -1,0 +1,64 @@
+Start_A1
+0	0	1	1
+0	1	0	1
+0	0	0	1
+End_A1
+Start_B1
+2	1	4	1
+End_B1
+Start_W1
+-7	-5
+End_W1
+Start_b1
+4
+End_b1
+Start_A2
+0	0	1	1
+0	1	0	1
+0	1	1	1
+End_A2
+Start_B2
+2	1	4	1
+End_B2
+Start_W2
+-7	-5
+End_W2
+Start_b2
+4
+End_b2
+Start_A3
+1	1	2	2	-1	-2	-1	-2
+1	2	-1	0	2	1	-1	-2
+0	0	0	0	1	1	1	1
+0	0	1	1	0	0	1	1
+End_A3
+Start_B3
+2	2	8	1
+End_B3
+Start_W3
+4	0
+0	4
+End_W3
+Start_b3
+4
+4
+End_b3
+Start_A4
+-1	0	2	1
+1	2	0	-1
+-1	1	2	0
+0	2	1	-1
+0	1	1	0
+1	1	0	0
+End_A4
+Start_B4
+2	2	4	2
+End_B4
+Start_W4
+3	-3
+-3	3
+End_W4
+Start_b4
+-3
+3
+End_b4
