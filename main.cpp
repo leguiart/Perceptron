@@ -13,8 +13,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Aprendizaje 
-    main.cpp 
+    Aprendizaje
+    main.cpp
     @author leguiart
 */
 
@@ -29,14 +29,14 @@ desde un programa en C++ se pedian los valores de los pesos, bias,
 ejemplos etc. y cada uno se iba guardando en un archivo de texto correspondiente,
 esto provocaba que se diera una carga muy ineficiente de las matrices
 además de solo poderse cargar máximo 5 matrices, lo que hacía que para
-cada ejercicio se tuviera que comentar las cargas de las matrices 
+cada ejercicio se tuviera que comentar las cargas de las matrices
 con sus archivos de texto correspondientes y volver a compilar cargando
 las matrices correspondientes al ejemplo que se quisiera correr,
 el programa utilizado para esto era generator.cpp.
 int main(int argc, const char * argv[] ){
   Perceptron perceptron;
   arma::mat A, B, W, b, A1, B1, W1, b1;
-  
+
   //A.load("or.txt", arma::arma_ascii);
   //B.load("or_d.txt", arma::arma_ascii);
   //A1.load("and.txt", arma::arma_ascii);
@@ -59,7 +59,7 @@ int main(int argc, const char * argv[] ){
 
 /*
 Por comodidad y eficiencia se decidió cambiar al método de crear las
-matrices con MATLAB/Octave ya que son completamente compatibles con 
+matrices con MATLAB/Octave ya que son completamente compatibles con
 armadillo.
 */
 // Extraer los datos como una matriz de Armadillo de tipo T, si no hay datos, la matriz estará vacía
@@ -80,14 +80,14 @@ arma::Mat<T> load_mat(std::ifstream &file, const std::string &keyword) {
  			has_data = true;
  		}
  	}
- 
+
  	arma::Mat<T> val;
  	if (has_data) {
  		val.load(ss);
  	}
  	return val;
 }
- 
+
 int main() {
   Perceptron perceptron[4]; //creamos cuatro perceptrones para los cuatro ejercicios
  	std::ifstream file("matlab_data_v2.txt"); //cargamos el stream del archivo generado por matlab
@@ -136,7 +136,7 @@ int main() {
   perceptron[3].Train();
   std::cout << "W:\n" << perceptron[3].getWeight() << "\n";
   std::cout << "b:\n" << perceptron[3].getBias() << "\n";
-
+  
  	file.close();
  	return 0;
 }

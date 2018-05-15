@@ -13,8 +13,8 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-  Aprendizaje 
-  Perceptron.cpp 
+  Aprendizaje
+  Perceptron.cpp
   Perceptron.h
   @author leguiart
 */
@@ -47,7 +47,7 @@ Perceptron::Perceptron(arma::mat A, arma::mat B, arma::mat W, arma::mat b) : A(A
   //Se obtienen los ejemplos con sus targets correspondientes con el siguiente recorrido de la matriz
   for(int i=0; i<percept.size(); i++)
   {
-    //El método submat de armadillo, regresa una submatriz de una matriz dada con la siguiente sintáxis: 
+    //El método submat de armadillo, regresa una submatriz de una matriz dada con la siguiente sintáxis:
     //<objeto tipo matriz>.submat(renglon inicial, columna inicial, renglon final, columna final)
     percept[i].p = A.submat(cont*n, cont2, (cont+1)*n-1, cont2);//ejemplo iesimo = submatriz de A(cont*#entradas, cont2, (cont+1)*#entradas - 1, cont2)
     percept[i].t = A.submat(n*e, cont2, n*e + m -1, cont2);//target de la categoría del ejemplo iesimo =  submatriz de A(#entradas*e, cont2, n*e + #desalidas - 1, cont2 )
@@ -55,7 +55,7 @@ Perceptron::Perceptron(arma::mat A, arma::mat B, arma::mat W, arma::mat b) : A(A
     {
       cont++;
     }
-    else{ //De otra manera, pasamos a la siguiente categoría (columna), y regresamos el contador de renglones a 0, aumentamos el contador de columnas en 1 para insertar 
+    else{ //De otra manera, pasamos a la siguiente categoría (columna), y regresamos el contador de renglones a 0, aumentamos el contador de columnas en 1 para insertar
           //los siguientes ejemplos y target correspondientes a la siguiente categoría
       cont = 0;
       cont2++;
@@ -65,7 +65,7 @@ Perceptron::Perceptron(arma::mat A, arma::mat B, arma::mat W, arma::mat b) : A(A
 
 arma::mat Perceptron::hardLim(arma::mat n1){
   /*
-    Se utiliza una matriz auxiliar para guardar y retornar el valor correspondiente 
+    Se utiliza una matriz auxiliar para guardar y retornar el valor correspondiente
     de n1 = Wp + b
   */
   arma::mat ret(n1.n_rows, 1);
